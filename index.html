@@ -1,35 +1,36 @@
-# Continental Camp ACG — NBA Ultra Premium Concept
+# Continental Camp ACG — Full Premium NBA Landing
 
 ```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Continental Camp ACG — NBA Experience</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Continental Camp ACG</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-
-:root{
---orange:#ff6b00;
---blue:#1d4fff;
---dark:#060606;
---soft:#121212;
---light:#f5f5f5;
-}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+--orange:#ff6b00;
+--blue:#135dff;
+--dark:#050505;
+--soft:#101010;
+--white:#ffffff;
 }
 
 body{
 font-family:'Inter',sans-serif;
-background:#050505;
+background:#030303;
 color:white;
 overflow-x:hidden;
 }
@@ -39,34 +40,30 @@ content:'';
 position:fixed;
 inset:0;
 background:
-radial-gradient(circle at top left, rgba(255,107,0,.16), transparent 30%),
-radial-gradient(circle at bottom right, rgba(29,79,255,.14), transparent 30%);
+radial-gradient(circle at top left, rgba(255,107,0,.14), transparent 30%),
+radial-gradient(circle at bottom right, rgba(19,93,255,.12), transparent 30%);
 pointer-events:none;
 z-index:-1;
 }
 
 nav{
 position:fixed;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-width:92%;
-max-width:1450px;
-padding:18px 30px;
+top:0;
+left:0;
+width:100%;
+padding:18px 7%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(10,10,10,.72);
-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:24px;
+background:rgba(0,0,0,.72);
+backdrop-filter:blur(18px);
 z-index:999;
-box-shadow:0 20px 60px rgba(0,0,0,.45);
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
+font-size:2.1rem;
 font-family:'Anton',sans-serif;
-font-size:2rem;
 letter-spacing:1px;
 }
 
@@ -80,27 +77,36 @@ gap:35px;
 list-style:none;
 }
 
-nav a{
+nav ul a{
 color:white;
 text-decoration:none;
-font-size:.95rem;
 font-weight:600;
-opacity:.8;
 transition:.3s;
 }
 
-nav a:hover{
-opacity:1;
+nav ul a:hover{
 color:var(--orange);
+}
+
+.cta-btn{
+background:linear-gradient(90deg,var(--orange),#ff9950);
+padding:14px 28px;
+border-radius:14px;
+font-weight:700;
+box-shadow:0 0 30px rgba(255,107,0,.35);
 }
 
 .hero{
 min-height:100vh;
-padding:180px 7% 120px;
 display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:70px;
+grid-template-columns:1fr 1fr;
 align-items:center;
+padding:160px 7% 80px;
+background:
+linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.88)),
+url('https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2400&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
 position:relative;
 }
 
@@ -111,343 +117,468 @@ right:-200px;
 top:-100px;
 width:700px;
 height:700px;
-background:radial-gradient(circle, rgba(255,107,0,.22), transparent 70%);
-filter:blur(30px);
+background:radial-gradient(circle, rgba(255,107,0,.25), transparent 70%);
+filter:blur(40px);
 }
 
-.hero-text h1{
-font-size:7rem;
-line-height:.95;
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.mini-title{
+color:#4ba1ff;
+font-size:1rem;
+letter-spacing:3px;
+margin-bottom:18px;
+}
+
+.hero h1{
 font-family:'Anton',sans-serif;
+font-size:7rem;
+line-height:.92;
 text-transform:uppercase;
-margin-bottom:30px;
+margin-bottom:28px;
 }
 
-.hero-text h1 span{
-background:linear-gradient(90deg,var(--orange),#ffb067);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+.hero h1 span{
+color:var(--orange);
 }
 
-.hero-text p{
-font-size:1.08rem;
+.hero-text{
+max-width:620px;
 line-height:2;
-color:#cfcfcf;
-max-width:700px;
+color:#d4d4d4;
+font-size:1.05rem;
 }
 
 .hero-buttons{
+display:flex;
+gap:18px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.primary-btn,
+.secondary-btn{
+padding:18px 36px;
+border:none;
+border-radius:14px;
+font-weight:700;
+cursor:pointer;
+transition:.35s;
+font-size:.95rem;
+}
+
+.primary-btn{
+background:linear-gradient(90deg,var(--orange),#ff9550);
+color:white;
+box-shadow:0 0 35px rgba(255,107,0,.35);
+}
+
+.secondary-btn{
+background:transparent;
+border:1px solid rgba(255,255,255,.14);
+color:white;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover{
+transform:translateY(-5px);
+}
+
+.hero-player{
+position:relative;
+z-index:2;
+}
+
+.hero-player img{
+width:100%;
+max-height:900px;
+object-fit:contain;
+filter:drop-shadow(0 0 60px rgba(0,0,0,.8));
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0px)}
+50%{transform:translateY(-18px)}
+}
+
+.countdown{
 display:flex;
 gap:18px;
 margin-top:45px;
 flex-wrap:wrap;
 }
 
-.btn{
-padding:16px 34px;
-border-radius:60px;
-font-weight:700;
-border:none;
-font-size:.95rem;
-transition:.35s;
-cursor:pointer;
-}
-
-.btn-primary{
-background:linear-gradient(90deg,var(--orange),#ff9c52);
-color:white;
-box-shadow:0 0 35px rgba(255,107,0,.35);
-}
-
-.btn-secondary{
-background:transparent;
-border:1px solid rgba(255,255,255,.15);
-color:white;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-}
-
-.hero-visual{
-position:relative;
-}
-
-.hero-card{
-position:relative;
-overflow:hidden;
-border-radius:38px;
-background:#0b0b0b;
-padding:24px;
-border:1px solid rgba(255,255,255,.08);
-box-shadow:0 30px 80px rgba(0,0,0,.55);
-}
-
-.hero-card img{
-width:100%;
-height:720px;
-object-fit:cover;
-border-radius:28px;
-}
-
-.floating-stat{
-position:absolute;
-background:rgba(0,0,0,.72);
-backdrop-filter:blur(18px);
-padding:18px 24px;
-border-radius:22px;
+.count-box{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+padding:24px 28px;
+border-radius:18px;
+min-width:120px;
+text-align:center;
 border:1px solid rgba(255,255,255,.08);
 }
 
-.floating-stat h3{
-font-size:2rem;
+.count-box h3{
+font-size:2.2rem;
 font-family:'Anton',sans-serif;
 color:var(--orange);
 }
 
-.stat-one{
-left:-40px;
-bottom:90px;
+.stats{
+padding:80px 7%;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:24px;
+background:#070707;
 }
 
-.stat-two{
-right:-20px;
-top:60px;
+.stat-card{
+background:linear-gradient(180deg,#111,#090909);
+padding:38px;
+text-align:center;
+border-radius:28px;
+border:1px solid rgba(255,255,255,.06);
+transition:.35s;
+}
+
+.stat-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 45px rgba(255,107,0,.12);
+}
+
+.stat-card i{
+font-size:2.5rem;
+margin-bottom:20px;
+color:var(--orange);
+}
+
+.stat-card h3{
+font-size:3rem;
+font-family:'Anton',sans-serif;
+margin-bottom:10px;
 }
 
 section{
-padding:110px 7%;
+padding:120px 7%;
 }
 
 .section-title{
-display:flex;
-justify-content:space-between;
-align-items:end;
-gap:30px;
-margin-bottom:60px;
-}
-
-.section-title h2{
-font-size:4.5rem;
-line-height:.95;
 font-family:'Anton',sans-serif;
+font-size:4.5rem;
+margin-bottom:60px;
 text-transform:uppercase;
 }
 
-.section-title h2 span{
+.section-title span{
 color:var(--orange);
 }
 
-.section-title p{
-max-width:520px;
-line-height:1.9;
-color:#bcbcbc;
-}
-
-.program-grid{
+.programs-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:22px;
 }
 
 .program-card{
-background:linear-gradient(180deg,#111,#080808);
-padding:32px;
+background:#0c0c0c;
 border-radius:28px;
-border:1px solid rgba(255,255,255,.06);
-transition:.4s;
-position:relative;
 overflow:hidden;
-min-height:250px;
-}
-
-.program-card::before{
-content:'';
-position:absolute;
-inset:0;
-background:linear-gradient(180deg,rgba(255,107,0,.12),transparent);
-opacity:0;
+border:1px solid rgba(255,255,255,.05);
 transition:.4s;
-}
-
-.program-card:hover::before{
-opacity:1;
 }
 
 .program-card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 45px rgba(255,107,0,.12);
+box-shadow:0 0 50px rgba(255,107,0,.15);
 }
 
-.program-icon{
-width:70px;
-height:70px;
-border-radius:20px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:rgba(255,107,0,.12);
-font-size:1.7rem;
-color:var(--orange);
-margin-bottom:28px;
+.program-card img{
+width:100%;
+height:280px;
+object-fit:cover;
 }
 
-.program-card h3{
-font-size:1.35rem;
-margin-bottom:18px;
+.program-content{
+padding:28px;
 }
 
-.program-card p{
-font-size:.95rem;
+.program-content h3{
+font-size:1.5rem;
+margin-bottom:14px;
+}
+
+.program-content p{
 line-height:1.8;
-color:#b8b8b8;
+color:#bdbdbd;
+margin-bottom:20px;
 }
 
-.showcase{
+.program-content a{
+color:var(--orange);
+font-weight:700;
+}
+
+.legend-layout{
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:1.2fr .8fr;
 gap:28px;
+align-items:start;
 }
 
-.showcase-card{
-position:relative;
-overflow:hidden;
-height:520px;
+.legend-big{
+height:620px;
 border-radius:34px;
+overflow:hidden;
+position:relative;
 }
 
-.showcase-card img{
+.legend-big img{
 width:100%;
 height:100%;
 object-fit:cover;
-transition:1s;
 }
 
-.showcase-card:hover img{
-transform:scale(1.08);
-}
-
-.showcase-overlay{
+.legend-overlay{
 position:absolute;
 inset:0;
-background:linear-gradient(to top, rgba(0,0,0,.92), transparent 60%);
+background:linear-gradient(to top, rgba(0,0,0,.95), transparent 60%);
 padding:40px;
 display:flex;
 flex-direction:column;
 justify-content:end;
 }
 
-.showcase-overlay h3{
-font-size:2rem;
-margin-bottom:10px;
+.legend-overlay h3{
+font-size:3rem;
+font-family:'Anton',sans-serif;
 }
 
-.metrics{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:22px;
+.legend-side{
+display:flex;
+flex-direction:column;
+gap:18px;
 }
 
-.metric{
+.legend-card{
+display:flex;
+gap:18px;
 background:#0c0c0c;
-padding:38px 24px;
-text-align:center;
-border-radius:28px;
+padding:18px;
+border-radius:24px;
+align-items:center;
 border:1px solid rgba(255,255,255,.06);
 }
 
-.metric h3{
-font-size:4rem;
-font-family:'Anton',sans-serif;
-color:var(--orange);
+.legend-card img{
+width:110px;
+height:110px;
+object-fit:cover;
+border-radius:18px;
 }
 
-.cta{
+.legend-card h4{
+font-size:1.5rem;
+margin-bottom:8px;
+}
+
+.legend-card p{
+color:#c2c2c2;
+line-height:1.7;
+font-size:.92rem;
+}
+
+.video-section{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:center;
+}
+
+.video-card{
 position:relative;
+height:500px;
+border-radius:34px;
 overflow:hidden;
-background:linear-gradient(145deg, rgba(255,107,0,.18), rgba(29,79,255,.18));
-border-radius:40px;
-padding:80px;
-text-align:center;
-border:1px solid rgba(255,255,255,.08);
 }
 
-.cta h2{
+.video-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.play-btn{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:90px;
+height:90px;
+border-radius:50%;
+background:rgba(255,107,0,.9);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
+box-shadow:0 0 45px rgba(255,107,0,.45);
+}
+
+.video-text h2{
 font-size:5rem;
 font-family:'Anton',sans-serif;
 line-height:.95;
-max-width:900px;
-margin:auto;
 margin-bottom:25px;
 }
 
-.cta p{
+.video-text span{
+color:var(--orange);
+}
+
+.video-text p{
+line-height:2;
+color:#c8c8c8;
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.testimonial{
+background:#0c0c0c;
+padding:38px;
+border-radius:28px;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.testimonial p{
+line-height:2;
+color:#d0d0d0;
+margin-bottom:25px;
+}
+
+.testimonial h4{
+font-size:1.1rem;
+}
+
+.cta-section{
+padding:140px 7%;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.9)),
+url('https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2400&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+}
+
+.cta-section h2{
+font-size:6rem;
+font-family:'Anton',sans-serif;
+line-height:.95;
+margin-bottom:25px;
+}
+
+.cta-section span{
+color:var(--orange);
+}
+
+.cta-section p{
 max-width:720px;
 margin:auto;
 line-height:2;
-color:#d0d0d0;
+color:#d4d4d4;
+margin-bottom:35px;
 }
 
-.cta .btn{
-margin-top:35px;
+footer{
+padding:60px 7%;
+text-align:center;
+background:#050505;
+color:#888;
+}
+
+.whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+width:72px;
+height:72px;
+border-radius:50%;
+background:#25d366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
+color:white;
+z-index:999;
+box-shadow:0 0 45px rgba(37,211,102,.5);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.08)}
+100%{transform:scale(1)}
 }
 
 @media(max-width:1200px){
 .hero,
-.showcase{
+.legend-layout,
+.video-section{
 grid-template-columns:1fr;
 }
 
-.program-grid,
-.metrics{
+.programs-grid,
+.stats,
+.testimonial-grid{
 grid-template-columns:repeat(2,1fr);
 }
 
-.hero-text h1{
+.hero h1,
+.cta-section h2{
 font-size:5rem;
 }
 }
 
 @media(max-width:700px){
-nav ul{
+nav ul,
+.cta-btn{
 display:none;
 }
 
 .hero{
-padding-top:150px;
+padding-top:130px;
 }
 
-.hero-text h1,
-.section-title h2,
-.cta h2{
+.hero h1,
+.section-title,
+.video-text h2,
+.cta-section h2{
 font-size:3rem;
 }
 
-.program-grid,
-.metrics{
+.programs-grid,
+.stats,
+.testimonial-grid{
 grid-template-columns:1fr;
 }
 
-.hero-card img{
-height:500px;
-}
-
-.floating-stat{
-position:relative;
-left:auto;
-right:auto;
-top:auto;
-bottom:auto;
-margin-top:20px;
-}
-
-.section-title{
+.hero-buttons,
+.countdown{
 flex-direction:column;
-align-items:start;
 }
 
-.cta{
-padding:60px 24px;
+.count-box{
+width:100%;
+}
+
+.hero-player img{
+max-height:550px;
 }
 }
 
@@ -457,178 +588,235 @@ padding:60px 24px;
 
 <nav>
 <div class="logo">CONTINENTAL <span>CAMP</span></div>
+
 <ul>
 <li><a href="#">Inicio</a></li>
 <li><a href="#">Programas</a></li>
 <li><a href="#">Coaches</a></li>
+<li><a href="#">Leyendas NBA</a></li>
 <li><a href="#">Experiencia</a></li>
 <li><a href="#">Contacto</a></li>
 </ul>
+
+<div class="cta-btn">INSCRÍBETE</div>
 </nav>
 
 <section class="hero">
 
-<div class="hero-text">
-<h1>NBA <span>TRAINING</span><br>EXPERIENCE</h1>
-<p>
-Una experiencia premium inspirada en academias NBA y centros de alto rendimiento internacionales. Continental Camp ACG combina tecnología, metodología moderna y preparación mental para desarrollar jugadores de nueva generación.
+<div class="hero-content">
+
+<p class="mini-title">VIVE LA EXPERIENCIA NBA</p>
+
+<h1>
+ENTRENA COMO<br>
+LOS GRANDES.<br>
+<span>LIDERA TU<br>LEGADO.</span>
+</h1>
+
+<p class="hero-text">
+Entrenamiento de élite, coaching profesional y una experiencia internacional inspirada en academias NBA de alto rendimiento.
 </p>
 
 <div class="hero-buttons">
-<button class="btn btn-primary">Reservar Lugar</button>
-<button class="btn btn-secondary">Explorar Camp</button>
-</div>
-</div>
-
-<div class="hero-visual">
-<div class="hero-card">
-<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1800&auto=format&fit=crop">
+<button class="primary-btn">INSCRÍBETE AHORA</button>
+<button class="secondary-btn">VER PROGRAMAS</button>
 </div>
 
-<div class="floating-stat stat-one">
-<h3>15K+</h3>
-<p>Jugadores entrenados</p>
+<div class="countdown">
+<div class="count-box"><h3>32</h3><p>DÍAS</p></div>
+<div class="count-box"><h3>14</h3><p>HORAS</p></div>
+<div class="count-box"><h3>27</h3><p>MINUTOS</p></div>
+<div class="count-box"><h3>45</h3><p>SEGUNDOS</p></div>
 </div>
 
-<div class="floating-stat stat-two">
-<h3>30+</h3>
-<p>Años de experiencia</p>
 </div>
+
+<div class="hero-player">
+<img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=1600&auto=format&fit=crop">
 </div>
 
 </section>
 
+<section class="stats">
+<div class="stat-card"><i class="fas fa-trophy"></i><h3>10+</h3><p>Años de experiencia</p></div>
+<div class="stat-card"><i class="fas fa-users"></i><h3>25K</h3><p>Atletas formados</p></div>
+<div class="stat-card"><i class="fas fa-globe"></i><h3>20+</h3><p>Países representados</p></div>
+<div class="stat-card"><i class="fas fa-star"></i><h3>50+</h3><p>Coaches elite</p></div>
+</section>
+
 <section>
-<div class="section-title">
-<h2>Programas <span>Elite</span></h2>
+<h2 class="section-title">PROGRAMAS <span>ELITE</span></h2>
+
+<div class="programs-grid">
+
+<div class="program-card">
+<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1400&auto=format&fit=crop">
+<div class="program-content">
+<h3>Elite Camp</h3>
+<p>Entrenamiento avanzado para atletas competitivos y desarrollo de fundamentos NBA.</p>
+<a>VER MÁS →</a>
+</div>
+</div>
+
+<div class="program-card">
+<img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1400&auto=format&fit=crop">
+<div class="program-content">
+<h3>Skills & IQ</h3>
+<p>Lectura táctica, manejo de balón y shooting profesional.</p>
+<a>VER MÁS →</a>
+</div>
+</div>
+
+<div class="program-card">
+<img src="https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=1400&auto=format&fit=crop">
+<div class="program-content">
+<h3>Leadership Camp</h3>
+<p>Mentalidad competitiva y liderazgo deportivo internacional.</p>
+<a>VER MÁS →</a>
+</div>
+</div>
+
+<div class="program-card">
+<img src="https://images.unsplash.com/photo-1505666287802-931dc83948e9?q=80&w=1400&auto=format&fit=crop">
+<div class="program-content">
+<h3>Pro Performance</h3>
+<p>Preparación física y metodologías modernas de alto rendimiento.</p>
+<a>VER MÁS →</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="section-title">LEYENDAS <span>NBA</span></h2>
+
+<div class="legend-layout">
+
+<div class="legend-big">
+<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=2000&auto=format&fit=crop">
+<div class="legend-overlay">
+<h3>MENTALIDAD DE ÉLITE</h3>
+<p>Inspirados en las grandes figuras del basketball mundial.</p>
+</div>
+</div>
+
+<div class="legend-side">
+
+<div class="legend-card">
+<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop">
+<div>
+<h4>Pau Gasol</h4>
+<p>“El trabajo en equipo y la disciplina son la base del éxito.”</p>
+</div>
+</div>
+
+<div class="legend-card">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop">
+<div>
+<h4>Dwyane Wade</h4>
+<p>“La diferencia entre bueno y grande es la mentalidad.”</p>
+</div>
+</div>
+
+<div class="legend-card">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop">
+<div>
+<h4>Manu Ginóbili</h4>
+<p>“Nunca dejes de competir, nunca dejes de aprender.”</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="video-section">
+
+<div class="video-text">
+<h2>EXPERIENCIA <span>VISUAL</span></h2>
 <p>
-Diseñados para jugadores que buscan competir al máximo nivel con metodologías modernas y entrenamiento especializado.
+Diseño cinematográfico, entrenamiento internacional y energía inspirada en escenarios NBA modernos.
 </p>
 </div>
 
-<div class="program-grid">
-
-<div class="program-card">
-<div class="program-icon"><i class="fas fa-basketball"></i></div>
-<h3>Skill Lab</h3>
-<p>Desarrollo ofensivo, shooting mechanics y manejo avanzado de balón.</p>
+<div class="video-card">
+<img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2000&auto=format&fit=crop">
+<div class="play-btn"><i class="fas fa-play"></i></div>
 </div>
 
-<div class="program-card">
-<div class="program-icon"><i class="fas fa-bolt"></i></div>
-<h3>Explosive Training</h3>
-<p>Velocidad, reacción y preparación atlética inspirada en combines NBA.</p>
+</section>
+
+<section>
+<h2 class="section-title">HISTORIAS QUE <span>INSPIRAN</span></h2>
+
+<div class="testimonial-grid">
+
+<div class="testimonial">
+<p>“Este camp cambió completamente mi mentalidad competitiva y mi disciplina.”</p>
+<h4>Alejandro M. — México</h4>
 </div>
 
-<div class="program-card">
-<div class="program-icon"><i class="fas fa-brain"></i></div>
-<h3>Mental Performance</h3>
-<p>Rutinas mentales y enfoque competitivo para escenarios de presión.</p>
+<div class="testimonial">
+<p>“Los coaches te llevan a otro nivel técnico y mental.”</p>
+<h4>Sofía R. — Argentina</h4>
 </div>
 
-<div class="program-card">
-<div class="program-icon"><i class="fas fa-trophy"></i></div>
-<h3>Pro Competition</h3>
-<p>Entrenamiento táctico y simulaciones de juego de alto rendimiento.</p>
+<div class="testimonial">
+<p>“Una experiencia internacional increíble para cualquier atleta.”</p>
+<h4>Luis P. — Colombia</h4>
 </div>
 
 </div>
 </section>
 
-<section>
-<div class="section-title">
-<h2>Experiencia <span>Visual</span></h2>
+<section class="cta-section">
+<h2>TU SUEÑO NBA <span>COMIENZA AQUÍ</span></h2>
 <p>
-Diseño cinematográfico, energía NBA y una identidad visual premium para una experiencia deportiva moderna.
+Prepárate para vivir una experiencia premium de basketball diseñada para atletas que buscan competir al máximo nivel.
 </p>
-</div>
-
-<div class="showcase">
-
-<div class="showcase-card">
-<img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=1800&auto=format&fit=crop">
-<div class="showcase-overlay">
-<h3>Elite Camps</h3>
-<p>Entrenamiento intensivo internacional.</p>
-</div>
-</div>
-
-<div class="showcase-card">
-<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1800&auto=format&fit=crop">
-<div class="showcase-overlay">
-<h3>NBA Inspired</h3>
-<p>Metodologías modernas y visual premium.</p>
-</div>
-</div>
-
-</div>
+<button class="primary-btn">INSCRÍBETE AHORA</button>
 </section>
 
-<section>
-<div class="metrics">
-<div class="metric">
-<h3>120+</h3>
-<p>Eventos internacionales</p>
-</div>
+<footer>
+© 2026 Continental Camp ACG — Todos los derechos reservados.
+</footer>
 
-<div class="metric">
-<h3>8</h3>
-<p>Países impactados</p>
-</div>
-
-<div class="metric">
-<h3>98%</h3>
-<p>Satisfacción atletas</p>
-</div>
-
-<div class="metric">
-<h3>24/7</h3>
-<p>Seguimiento profesional</p>
-</div>
-</div>
-</section>
-
-<section>
-<div class="cta">
-<h2>ELITE BASKETBALL STARTS HERE</h2>
-<p>
-Prepárate para vivir una experiencia premium diseñada para atletas que buscan competir al siguiente nivel.
-</p>
-
-<button class="btn btn-primary">Aplicar Ahora</button>
-</div>
-</section>
+<a class="whatsapp" href="#">
+<i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
 
-gsap.from('.hero-text h1',{
-y:100,
-opacity:0,
-duration:1.2,
-ease:'power4.out'
+window.addEventListener('scroll',()=>{
+
+const nav = document.querySelector('nav');
+
+if(window.scrollY > 50){
+nav.style.background = 'rgba(0,0,0,.95)';
+}else{
+nav.style.background = 'rgba(0,0,0,.72)';
+}
+
 });
 
-gsap.from('.hero-text p',{
-y:50,
-opacity:0,
-duration:1.2,
-delay:.2
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity='1';
+entry.target.style.transform='translateY(0px)';
+}
 });
+},{threshold:.15});
 
-gsap.from('.btn',{
-y:40,
-opacity:0,
-duration:1,
-stagger:.15,
-delay:.4
-});
+const cards = document.querySelectorAll('.program-card,.stat-card,.testimonial,.legend-card');
 
-gsap.from('.program-card',{
-y:80,
-opacity:0,
-duration:1,
-stagger:.12,
-ease:'power3.out'
+cards.forEach(card=>{
+card.style.opacity='0';
+card.style.transform='translateY(40px)';
+card.style.transition='all .8s ease';
+observer.observe(card);
 });
 
 </script>
@@ -637,14 +825,26 @@ ease:'power3.out'
 </html>
 ```
 
-## Concepto visual
+## Cómo usarlo
 
-* Diseño NBA ultra premium
-* Menos saturación visual
-* Tarjetas más compactas y elegantes
-* Glassmorphism fino
-* Glow naranja/azul inspirado NBA
-* Composición cinematográfica moderna
-* Hero editorial tipo Nike Basketball
-* Responsive premium
-* Animaciones suaves estilo Apple + ESPN
+1. Crea un archivo:
+
+```text
+index.html
+```
+
+2. Pega TODO el código.
+
+3. Guarda con:
+
+```text
+CTRL + S
+```
+
+4. Abre:
+
+```text
+Open With Live Server
+```
+
+Y tendrás la landing premium completa funcionando.
